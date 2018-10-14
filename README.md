@@ -18,3 +18,5 @@ $ git commit -m “Initial Commit”
 ```
 
 the state that an empy repository is created
+![image](https://user-images.githubusercontent.com/6435299/46917214-4c638200-cfff-11e8-8cdd-e927d44fafa7.png)
+
