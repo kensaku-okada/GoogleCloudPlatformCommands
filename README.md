@@ -1,9 +1,11 @@
 # GoogleCloudPlatformCommands
 
+***
+
 how to access the virtual environment on GCE from the local env is written here.
 https://cloud.google.com/sdk/docs/quickstart-windows
 
-
+***
 
 how to run a simple app on GCP
 https://www.topgate.co.jp/gcp04-google-compute-engine-run-application　
