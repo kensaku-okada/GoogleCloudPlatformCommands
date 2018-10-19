@@ -120,6 +120,9 @@ Still requirements.txt could not be read. When I tried "sudo gunicorn -b 0.0.0.0
 ![image](https://user-images.githubusercontent.com/6435299/47229073-c7fb6f80-d401-11e8-92b4-bccab24d5641.png)
 Still, this error occured.
 
+![image](https://user-images.githubusercontent.com/6435299/47229561-f2016180-d402-11e8-9a4d-ae95fa191b63.png)
+requirements.txt was not found...
+
 ***
 
 ### 【GCP入門編・第5回】 Google App Engine の魅力とは？ Google App Engine (GAE) でのアプリケーション起動方法！
