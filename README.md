@@ -57,8 +57,7 @@ $ git commit -m “Initial Commit”
 - the state that an empty repository is created
 ![image](https://user-images.githubusercontent.com/6435299/46917214-4c638200-cfff-11e8-8cdd-e927d44fafa7.png)
 
-- run these command on 
-- these did not work with Git Bash on the local environemnt.
+- run these command on your google cloud SDK shell. these does not work with Git Bash on the local environemnt. We push the local git repository to the GCE instance.
 ```
 $ gcloud init && git config --global credential.https://source.developers.google.com.helper gcloud.cmd
 $ git remote add google \
