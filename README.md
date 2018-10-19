@@ -66,8 +66,46 @@ $ git push --all google
 ```
 ![image](https://user-images.githubusercontent.com/6435299/47220151-e8203400-d3eb-11e8-970a-7d58503da428.png)
 
-
+- Here are the outputs when executing the commands.
 ![image](https://user-images.githubusercontent.com/6435299/47220897-fc653080-d3ed-11e8-85db-def8a429a86c.png)
+
+- **When you have an error "fatal: remote google already exists." at the second command, do "git remote rm google", then it will proceed correctly.**
+![image](https://user-images.githubusercontent.com/6435299/47225178-6be01d80-d3f8-11e8-8eb8-790a6323d81e.png)
+
+- if you successfully push the repository, you gonna see the directories and files on the GCP browser like this (in this picture, I pushed all the directories of "python-docs-samples".)
+![image](https://user-images.githubusercontent.com/6435299/47225321-c5484c80-d3f8-11e8-8d0a-0683a949498f.png)
+
+- you finished registering the private repository on the remote. Next, run a sample application on GCE instance.
+```
+// log in the instance through google cloud SDK. In my case, the instance name is myinstance-1
+$ gcloud compute ssh "your instance name"
+// the VM console opens
+// clone the repository to this instance
+$ gcloud init
+$ gcloud source repos clone "your repository name" --project="your project ID" 
+// if you are still running nginx, stop it by:
+$ sudo service nginx stop
+// run “hello-world” application
+$ cd hello-world
+$ sudo apt install python-pip gunicorn
+$ pip install --upgrade pip
+$ sudo pip install -r requirements.txt
+$ sudo gunicorn -b 0.0.0.0:80 main:app
+
+
+```
+
+![image](https://user-images.githubusercontent.com/6435299/47226468-91baf180-d3fb-11e8-9e2c-22d5ff1befb8.png)
+
+
+![image](https://user-images.githubusercontent.com/6435299/47226700-1c035580-d3fc-11e8-9e42-8905cfdb2b5b.png)
+
+
+![image](https://user-images.githubusercontent.com/6435299/47226723-2de4f880-d3fc-11e8-903d-f406aaa44568.png)
+
+
+![image](https://user-images.githubusercontent.com/6435299/47227632-47873f80-d3fe-11e8-86c4-0437eb46d321.png)
+
 
 
 
