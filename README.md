@@ -1,4 +1,14 @@
 # GoogleCloudPlatformCommands
+This note is describing a GCP tutorial by https://www.topgate.co.jp 
+***
+
+【GCP入門編・第2回】まずは、ここから！知らないと恥ずかしい Google Cloud Platform (GCP) の事前準備！
+https://www.topgate.co.jp/gcp02-getting-started-guide
+just creating an account on GCP
+
+***
+
+
 
 ***
 
