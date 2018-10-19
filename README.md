@@ -34,15 +34,15 @@ The official reference on how to access the virtual environment on GCE from the 
 https://cloud.google.com/sdk/docs/quickstart-windows
 
 ***
+### 【GCP入門編・第4回】すぐ出来なくても大丈夫！サンプルアプリで Google Compute Engine (GCE) の動作練習！
+https://www.topgate.co.jp/gcp04-google-compute-engine-run-application
+In this section, we just run a sample application on Google Compute Engine (GCE). It was assumed that you have Git on the local machine.
 
-
-how to run a simple app on GCP
-https://www.topgate.co.jp/gcp04-google-compute-engine-run-application　
-used commands
-
+- used commands
 ```
+//Just download the sample app. we do not use all of the source code
 $ git clone https://github.com/GoogleCloudPlatform/python-docs-samples.git
-
+// we use only ”appengine/standard/flask/hello_world” in "python-docs-samples" folder
 $ cp -rf appengine/standard/flask/hello_world hello_world
 $ cd hello_world
 $ git init .
@@ -50,14 +50,31 @@ $ git add .
 $ git commit -m “Initial Commit”
 ```
 
-the state that an empy repository is created
+- open GCP and move to "Source Repositories" and create an empty repository.
+![image](https://user-images.githubusercontent.com/6435299/47219997-69c39200-d3eb-11e8-8602-a613515185d4.png)
+- click  ”Push code from a local Git repository to your Cloud Repository” and run the shown command 
+
+- the state that an empty repository is created
 ![image](https://user-images.githubusercontent.com/6435299/46917214-4c638200-cfff-11e8-8cdd-e927d44fafa7.png)
+
+- run these command on 
+- these did not work with Git Bash on the local environemnt.
 ```
-$ gcloud init && git config --global credential.https://source.developers.google.com.helper gc
+$ gcloud init && git config --global credential.https://source.developers.google.com.helper gcloud.cmd
 $ git remote add google \
-  https://source.developers.google.com/p/tidal-geode-182004/r/myRepository1
+  https://source.developers.google.com/p/'your project name'/r/myRepository1
 $ git push --all google  
 ```
+![image](https://user-images.githubusercontent.com/6435299/47220151-e8203400-d3eb-11e8-970a-7d58503da428.png)
+
+
+![image](https://user-images.githubusercontent.com/6435299/47220897-fc653080-d3ed-11e8-85db-def8a429a86c.png)
+
+
+
+
+
+
 
 
 
