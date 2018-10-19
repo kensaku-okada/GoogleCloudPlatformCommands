@@ -83,18 +83,8 @@ $ gcloud compute ssh "your instance name"
 // clone the repository to this instance
 $ gcloud init
 $ gcloud source repos clone "your repository name" --project="your project ID" 
-// if you are still running nginx, stop it by:
-$ sudo service nginx stop
-// run “hello-world” application
-$ cd hello-world
-$ sudo apt install python-pip gunicorn
-$ pip install --upgrade pip
-$ sudo pip install -r requirements.txt
-$ sudo gunicorn -b 0.0.0.0:80 main:app
-
-
 ```
-
+If you get the error "ERROR: (gcloud.source.repos.clone) NOT_FOUND: Requested entity was not found.", change the VM's Cloud API access scopes as follows.
 ![image](https://user-images.githubusercontent.com/6435299/47226468-91baf180-d3fb-11e8-9e2c-22d5ff1befb8.png)
 
 
@@ -105,6 +95,23 @@ $ sudo gunicorn -b 0.0.0.0:80 main:app
 
 
 ![image](https://user-images.githubusercontent.com/6435299/47227632-47873f80-d3fe-11e8-86c4-0437eb46d321.png)
+
+
+if you are still running nginx, stop it by:
+```
+$ sudo service nginx stop
+```
+run “hello-world” application as below.
+```
+$ cd hello-world
+$ sudo apt install python-pip gunicorn
+$ pip install --upgrade pip
+$ sudo pip install -r requirements.txt
+$ sudo gunicorn -b 0.0.0.0:80 main:app
+
+
+```
+
 
 
 
