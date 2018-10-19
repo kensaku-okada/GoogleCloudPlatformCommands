@@ -2,17 +2,22 @@
 This note is describing a GCP tutorial by https://www.topgate.co.jp 
 ***
 
-【GCP入門編・第2回】まずは、ここから！知らないと恥ずかしい Google Cloud Platform (GCP) の事前準備！
-https://www.topgate.co.jp/gcp02-getting-started-guide
-just creating an account on GCP
-
+### 【GCP入門編・第2回】まずは、ここから！知らないと恥ずかしい Google Cloud Platform (GCP) の事前準備！
+https://www.topgate.co.jp/gcp02-getting-started-guide  
+> just creating an account on GCP
 ***
 
+### 【GCP入門編・第3回】難しくない！ Google Compute Engine (GCE) でのインスタンス起動方法！  
+https://www.topgate.co.jp/gcp03-google-compute-engine-launch-instance  
+> make an instance on Google Compute Engine (GCE). This is my instance. 
+![image](https://user-images.githubusercontent.com/6435299/47217747-519c4480-d3e4-11e8-8085-4eeb3d5543f7.png)
 
 
-***
+> download Cloud SDK to log into the created instance from the local environment
+> "gcloud init" to start the initial configuration
+> 
 
-how to access the virtual environment on GCE from the local env is written here.
+The official reference on how to access the virtual environment on GCE from the local env is written here.
 https://cloud.google.com/sdk/docs/quickstart-windows
 
 ***
