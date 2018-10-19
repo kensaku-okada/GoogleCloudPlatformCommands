@@ -108,15 +108,23 @@ $ sudo apt install python-pip gunicorn
 $ pip install --upgrade pip
 $ sudo pip install -r requirements.txt
 $ sudo gunicorn -b 0.0.0.0:80 main:app
-
-
 ```
+the original website says the commands above should show  “Hello World!”, but the following erros actually occured.
+ 
+ ![image](https://user-images.githubusercontent.com/6435299/47229016-a00c0c00-d401-11e8-886e-a4b4686670d6.png)
+This problem was solved by "python -m pip uninstall pip". (see https://stackoverflow.com/questions/49964093/file-usr-bin-pip-line-9-in-module-from-pip-import-main-importerror-canno/49988228)
 
+![image](https://user-images.githubusercontent.com/6435299/47228899-5f13f780-d401-11e8-96d0-56eb9a0252a6.png)
+Still requirements.txt could not be read. When I tried "sudo gunicorn -b 0.0.0.0:80 main:app" anyway, I got an error "ImportError: No module named flask". Then, I manually installed flask.
 
+![image](https://user-images.githubusercontent.com/6435299/47229073-c7fb6f80-d401-11e8-92b4-bccab24d5641.png)
+Still, this error occured.
 
+***
 
-
-
+### 【GCP入門編・第5回】 Google App Engine の魅力とは？ Google App Engine (GAE) でのアプリケーション起動方法！
+https://www.topgate.co.jp/gcp05-google-app-engine-run-application
+In progress.
 
 
 
