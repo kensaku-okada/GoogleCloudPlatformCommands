@@ -129,6 +129,43 @@ requirements.txt was not found...
 https://www.topgate.co.jp/gcp05-google-app-engine-run-application
 In progress.
 
+Google App Engine (GAE) is a Platform as a Service (PaaS) provided by Google. We can run our own apps on the google infrastructure with GAE. The difference between GAE and GCE is that GAE is a PaaS and GCE is IaaS (Infrastructure as a service), which is more flexible but needs more configuration by ourselves. the detail is explained at https://stackoverflow.com/questions/22697049/what-is-the-difference-between-google-app-engine-and-google-compute-engine.
+
+- used commands
+```
+//download the same sample app as Lecture 4 (the last section). Again we need to do this on Git, not on Google SDK.
+$ git clone https://github.com/GoogleCloudPlatform/python-docs-samples.git
+$ cp -rf appengine/standard/flask/hello_world hello_world
+$ cd hello_world
+$ git init .
+$ git add .
+$ git commit -m “Initial Commit”
+//run the following on Google SDK.
+$ gcloud init && git config credential.helper gcloud.sh
+$ git remote add google https://source.developers.google.com/p/プロジェクトID/r/hello-world
+$ git push --all google
+```
+![image](https://user-images.githubusercontent.com/6435299/47268173-7af5d580-d588-11e8-8ed0-49c3d67515f3.png)
+
+![image](https://user-images.githubusercontent.com/6435299/47268205-db851280-d588-11e8-84b8-28cbb4903e69.png)
+```
+//log into the VM instance we made
+$ gcloud compute ssh "your instance name"
+// run the following on the instance shell screen, not on the google SDK.
+$ gcloud init
+$ gcloud source repos clone hello-world --project="your project name"
+$ sudo service nginx stop
+$ cd hello-world
+$ sudo apt install python-pip gunicorn
+$ pip install --upgrade pip
+$ sudo pip install -r requirements.txt
+$ sudo gunicorn -b 0.0.0.0:80 main:app
+```
+![image](https://user-images.githubusercontent.com/6435299/47268279-e7bd9f80-d589-11e8-9291-336802745fe8.png)
+
+You will see some error messages as mentioned in the last section, but I got the expected result with the instance external IP address on the browser as below.
+![image](https://user-images.githubusercontent.com/6435299/47268498-d9bd4e00-d58c-11e8-8a41-10b1a18d555e.png)
+
 
 
 
