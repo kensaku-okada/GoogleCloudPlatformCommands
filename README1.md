@@ -191,10 +191,3 @@ https://cloud.google.com/appengine/docs/standard/python/getting-started/python-s
 ## How to activate virtualenv
 https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/
 mypython\Scripts\activate
-
-***
-
-### 【GCP入門編・第6回】これは簡単！ Google App Engine での Cloud Datastore の利用方法！
-https://www.topgate.co.jp/gcp06-how-to-use-cloud-datastore-gae
-
-
