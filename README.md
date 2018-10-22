@@ -127,7 +127,6 @@ requirements.txt was not found...
 
 ### 【GCP入門編・第5回】 Google App Engine の魅力とは？ Google App Engine (GAE) でのアプリケーション起動方法！
 https://www.topgate.co.jp/gcp05-google-app-engine-run-application
-In progress.
 
 Google App Engine (GAE) is a Platform as a Service (PaaS) provided by Google. We can run our own apps on the google infrastructure with GAE. The difference between GAE and GCE is that GAE is a PaaS and GCE is IaaS (Infrastructure as a service), which is more flexible but needs more configuration by ourselves. the detail is explained at https://stackoverflow.com/questions/22697049/what-is-the-difference-between-google-app-engine-and-google-compute-engine.
 
@@ -166,8 +165,36 @@ $ sudo gunicorn -b 0.0.0.0:80 main:app
 You will see some error messages as mentioned in the last section, but I got the expected result with the instance external IP address on the browser as below.
 ![image](https://user-images.githubusercontent.com/6435299/47268498-d9bd4e00-d58c-11e8-8a41-10b1a18d555e.png)
 
+Now, the topgate's description is outdated (https://www.topgate.co.jp/gcp05-google-app-engine-run-application). You can deploy an app on GAE with this tutorial. https://cloud.google.com/appengine/docs/standard/python/quickstart#test_the_application
+The commands I executed was as follows, which was easier than using on GCE.
+```
+git clone https://github.com/GoogleCloudPlatform/python-docs-samples
+cd python-docs-samples/appengine/standard/hello_world
+gcloud app deploy
+gcloud app browse
+```
+You may need to run this command before "gcloud app deploy". If you cannot run it correctly, refer to https://blog.mktia.com/flask-on-google-app-engine/
+```
+dev_appserver.py app.yaml
+```
 
+![image](https://user-images.githubusercontent.com/6435299/47295698-439c2d00-d64b-11e8-98ce-9d10f89b8358.png)
 
+The part I modified on main.py
+![image](https://user-images.githubusercontent.com/6435299/47295880-b4434980-d64b-11e8-94a6-fe419aa9bd0c.png)
 
+You would be able to run Flask following this tutorial, but it is a bit more complicated.
+https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env
+
+# Appendix  
+
+## How to activate virtualenv
+https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/
+mypython\Scripts\activate
+
+***
+
+### 【GCP入門編・第6回】これは簡単！ Google App Engine での Cloud Datastore の利用方法！
+https://www.topgate.co.jp/gcp06-how-to-use-cloud-datastore-gae
 
 
