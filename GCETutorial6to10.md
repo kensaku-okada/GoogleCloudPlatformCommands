@@ -1,4 +1,4 @@
-
+# GoogleCloudPlatformTutorials 2
 
 ***
 
@@ -50,9 +50,8 @@ def server_error(e):
     return 'An internal error occurred.', 500
 ```
     
-- 2. add a HTML template where we input messages and show them.
+- 2. add a HTML template where we input messages and show them. add ”templates” directory and create templates/hello.html” as shown below.
 ```
-// add ”templates” directory and create templates/hello.html” as shown below.
 <!doctype html>
 <head>
   <title>Message Board</title>
@@ -70,6 +69,16 @@ def server_error(e):
 </body>
 ```
 
+- 3. execute the following commands. 
+```
+$ gcloud app deploy
+$ gcloud app browse    
+```
 
-    
-    
+![image](https://user-images.githubusercontent.com/6435299/47373150-3011c480-d726-11e8-9fca-b53176dbd516.png)
+
+![image](https://user-images.githubusercontent.com/6435299/47373392-b201ed80-d726-11e8-97a6-b81bbe8f7f65.png)
+
+We found that the suggested way did not work. We need to look for other ways.
+
+
