@@ -166,7 +166,7 @@ You will see some error messages as mentioned in the last section, but I got the
 ![image](https://user-images.githubusercontent.com/6435299/47268498-d9bd4e00-d58c-11e8-8a41-10b1a18d555e.png)
 
 Now, the topgate's description is outdated (https://www.topgate.co.jp/gcp05-google-app-engine-run-application). You can deploy an app on GAE with this tutorial. https://cloud.google.com/appengine/docs/standard/python/quickstart#test_the_application
-The commands I executed was as follows, which was easier than using on GCE.
+The commands I executed was as follows, which was easier than using on GCE. We do not even have to log into the VM instance (only on google SDK). 
 ```
 git clone https://github.com/GoogleCloudPlatform/python-docs-samples
 cd python-docs-samples/appengine/standard/hello_world
