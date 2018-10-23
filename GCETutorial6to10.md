@@ -79,6 +79,12 @@ $ gcloud app browse
 
 ![image](https://user-images.githubusercontent.com/6435299/47373392-b201ed80-d726-11e8-97a6-b81bbe8f7f65.png)
 
-We found that the suggested way did not work. We need to look for other ways.
+We found that the suggested way did not work, showing the error message above. We need to look for other ways.
+
+***
+【GCP入門編・第7回】知らなきゃ損！ Google Container Engine (GKE) での Dockerイメージを使ったコンテナの起動方法！
+https://www.topgate.co.jp/gcp07-how-to-start-docker-image-gke
+
+in progress.
 
 
