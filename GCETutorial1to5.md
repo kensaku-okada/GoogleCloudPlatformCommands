@@ -1,4 +1,4 @@
-# GoogleCloudPlatformCommands
+# GoogleCloudPlatformTutorials 1
 This note is describing a GCP tutorial by https://www.topgate.co.jp 
 ***
 
