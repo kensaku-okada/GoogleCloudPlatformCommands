@@ -113,7 +113,7 @@ $ export PROJECT_ID="your project id" // this command worked only on Git, not th
 $ gcloud config set compute/zone asia-northeast1-a
 ```
 
-![image](https://user-images.githubusercontent.com/6435299/47612956-baf91300-dac8-11e8-8424-ba328635b1a1.png)
+![image](https://user-images.githubusercontent.com/6435299/47613113-f812d480-dacb-11e8-98a8-4b032edcdac3.png)
 
 - get the authentication info to let jubectl access the clusters. 
 ```
@@ -126,6 +126,51 @@ $ gcloud container clusters get-credentials "your cluster name" // in my case "y
 ```
 $ kubectl run wordpress --image=tutum/wordpress --port=80
 ```
+![image](https://user-images.githubusercontent.com/6435299/47613124-20023800-dacc-11e8-8c6c-6f8c98d3a05a.png)
+
+- you can view the deployment info with the following command.
+```
+$ kubectl describe deployments
+```
+![image](https://user-images.githubusercontent.com/6435299/47613136-4de77c80-dacc-11e8-8459-0729b950f012.png)
+
+- you cannot access the deployed WordPress in the current state. the pod has an IP address, but it is only for internal accesses. we need to enable external accesses via LoadBalancer by making a service. we conduct this configuration by the following command on kubectl.
+```
+$  kubectl expose deployment wordpress --type=LoadBalancer
+```
+![image](https://user-images.githubusercontent.com/6435299/47613242-c0f1f280-dace-11e8-9c7f-c498dbcfd3ef.png)
+
+- we can finally open the service to the public. check the status with this command. 
+```
+$ kubectl describe services wordpress //endpoint is the external IP address. IP is the internal IP address.
+```
+![image](https://user-images.githubusercontent.com/6435299/47613248-f4348180-dace-11e8-9a75-36f630c0c891.png)
+
+![image](https://user-images.githubusercontent.com/6435299/47613322-72455800-dad0-11e8-8884-1180066e9830.png)
+
+![image](https://user-images.githubusercontent.com/6435299/47613486-8b9bd380-dad3-11e8-8451-7e843529c40a.png)
+
+- not to let others 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
