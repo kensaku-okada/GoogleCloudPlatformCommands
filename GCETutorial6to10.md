@@ -172,34 +172,35 @@ $ kubectl get pods
 
 - make a service as a LoadBalancer.
 ```
-$ kubectl expose deployment nginx --type=LoadBalancer
+$ kubectl expose deployment nginx --type=LoadBalancer --port=80
 ```
+![image](https://user-images.githubusercontent.com/6435299/47613873-f7813a80-dad9-11e8-8d39-474aa2dc9bed.png)
 
-ここから
-
-describe services コマンドで IP を確認します。
-
+- make sure IP with:
+```
 $ kubectl describe services
+```
+![image](https://user-images.githubusercontent.com/6435299/47613878-25ff1580-dada-11e8-8a50-adec45685ce6.png)
 
+- we canse the nginxes are running with the LoadBalancer Ingress IP addresses (35.221.80.238)
+![image](https://user-images.githubusercontent.com/6435299/47613889-51820000-dada-11e8-909b-132024ec882c.png)
 
-ブラウザで LoadBalancer Ingress に表示された IP を開くと、 nginx が起動していることがわかります。
+**Now we made two nginx containers which can automatically distribute the load (accesses) to themselves (loadbalancing)**
 
-このように、 GKE では簡単に複数のコンテナを立ち上げることができ、アクセスを LoadBalancer で振り分ける、といったことも可能です。
-先ほどと同様、 Deployment と Service を削除します。
-
+- delete Deployment and Service 
+```
 $ kubectl delete services nginx
-20.jpg
-
 $ kubectl delete deployments nginx
-21.jpg
-最後に、クラスターを終了します。クラスターの終了には gcloud コマンドを使用します。
-
-$ gcloud container clusters delete クラスタ-名
+```
+![image](https://user-images.githubusercontent.com/6435299/47613964-54312500-dadb-11e8-9c7d-aa2234ea1eed.png)
 
 
+***
 
+### 【GCP入門編・第8回】 Container Registry での Docker イメージの使用方法！
+https://www.topgate.co.jp/gcp08-how-to-use-docker-image-container-registry
 
-
+In progress.
 
 
 
