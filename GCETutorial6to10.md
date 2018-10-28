@@ -148,13 +148,53 @@ $ kubectl describe services wordpress //endpoint is the external IP address. IP 
 
 ![image](https://user-images.githubusercontent.com/6435299/47613322-72455800-dad0-11e8-8884-1180066e9830.png)
 
-![image](https://user-images.githubusercontent.com/6435299/47613486-8b9bd380-dad3-11e8-8451-7e843529c40a.png)
+- not to let others use the opened wordpress, dont forget delete the Service and Deployment
+```
+$ kubectl delete services wordpress
+$ kubectl delete deployment wordpress
+```
+![image](https://user-images.githubusercontent.com/6435299/47613513-f9e09600-dad3-11e8-98ec-35433d6aa94b.png)
 
-- not to let others 
+### run more than one containers with Container Engine
+
+- in GKE, we can easily run more than one container. Here is an example where we run two ngnxes.
+```
+$ kubectl run nginx --image=nginx --replicas=2
+```
+![image](https://user-images.githubusercontent.com/6435299/47613789-79706400-dad8-11e8-9374-7210bf5c6364.png)
+
+- we can see that two pods are running with the following command.
+```
+// watching running pods
+$ kubectl get pods
+```
+![image](https://user-images.githubusercontent.com/6435299/47613796-a3c22180-dad8-11e8-9bd6-14b69a17cf2f.png)
+
+- make a service as a LoadBalancer.
+```
+$ kubectl expose deployment nginx --type=LoadBalancer
+```
+
+ここから
+
+describe services コマンドで IP を確認します。
+
+$ kubectl describe services
 
 
+ブラウザで LoadBalancer Ingress に表示された IP を開くと、 nginx が起動していることがわかります。
 
+このように、 GKE では簡単に複数のコンテナを立ち上げることができ、アクセスを LoadBalancer で振り分ける、といったことも可能です。
+先ほどと同様、 Deployment と Service を削除します。
 
+$ kubectl delete services nginx
+20.jpg
+
+$ kubectl delete deployments nginx
+21.jpg
+最後に、クラスターを終了します。クラスターの終了には gcloud コマンドを使用します。
+
+$ gcloud container clusters delete クラスタ-名
 
 
 
