@@ -85,6 +85,65 @@ We found that the suggested way did not work, showing the error message above. W
 【GCP入門編・第7回】知らなきゃ損！ Google Container Engine (GKE) での Dockerイメージを使ったコンテナの起動方法！
 https://www.topgate.co.jp/gcp07-how-to-start-docker-image-gke
 
-in progress.
+In this section, we establish Docker container using Google Container Engine (GKE).
+
+After enabling Kubernetes Engine API on API Library, we create a container cluster.
+
+![image](https://user-images.githubusercontent.com/6435299/47612573-e24be200-dac0-11e8-8aab-61a21eb73e98.png)
+
+![image](https://user-images.githubusercontent.com/6435299/47612806-86378c80-dac5-11e8-9c17-66452e4996e0.png)
+
+With "gcloud compute instances list" command on the local terminal (or command prompt for Windows), you can see that the containers were created (in this case, three containers were created becasue I chose making 3 nodes)
+
+![image](https://user-images.githubusercontent.com/6435299/47612831-f0e8c800-dac5-11e8-9ae1-3d1577346d11.png)
+
+Next, run Docker containers on the cluster(s).
+
+- install kubectl (a command line tool to manipulate Kubarnetes). To do it, start gcloud SDK as an administra then run this command
+```
+gcloud components install kubectl
+```
+![image](https://user-images.githubusercontent.com/6435299/47612863-df53f000-dac6-11e8-8ed8-d4f21059b1db.png)
+
+![image](https://user-images.githubusercontent.com/6435299/47612879-38bc1f00-dac7-11e8-8772-82cbb8c9ed17.png)
+
+- set the environemnt variable and the default zone to let kubectl recognize Container Engine clusters.
+```
+$ export PROJECT_ID="your project id" // this command worked only on Git, not the command prompt or google SDK.
+$ gcloud config set compute/zone asia-northeast1-a
+```
+
+![image](https://user-images.githubusercontent.com/6435299/47612956-baf91300-dac8-11e8-8424-ba328635b1a1.png)
+
+- get the authentication info to let jubectl access the clusters. 
+```
+$ gcloud auth application-default login
+$ gcloud container clusters get-credentials "your cluster name" // in my case "your cluster name" is cluster-1	
+```
+![image](https://user-images.githubusercontent.com/6435299/47613101-a9653a80-dacb-11e8-8e29-d7f3ade97450.png)
+
+- establish a pod using kubectl by running the following command (WordPress Image (tutum/wordpress) is gonna execute).
+```
+$ kubectl run wordpress --image=tutum/wordpress --port=80
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
