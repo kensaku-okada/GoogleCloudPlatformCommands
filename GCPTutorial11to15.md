@@ -59,7 +59,7 @@ SELECT * FROM ["your project id":tokyo_companies.company] LIMIT 10
 ![image](https://user-images.githubusercontent.com/6435299/47649783-a3ea1c00-dbc1-11e8-9428-5b1393a6eb28.png)
 
 - more than 1 million search finished by 47.3 seconds.
-![image](https://user-images.githubusercontent.com/6435299/47650122-97b28e80-dbc2-11e8-8b80-856c78fa3db8.png)
+![image](https://user-images.githubusercontent.com/6435299/47650466-ae0d1a00-dbc3-11e8-9372-64ec72fdb4ae.png)
 
 - a bit more complicated query was run below.
 ```
