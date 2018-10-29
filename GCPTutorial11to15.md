@@ -34,14 +34,43 @@ http://www.houjin-bangou.nta.go.jp/download/zenken/#csv-unicode
 
 ![image](https://user-images.githubusercontent.com/6435299/47645368-2966cf80-dbb4-11e8-9d3e-cfce418983fc.png)
 
+- go to "Go To Classic UI".
+![image](https://user-images.githubusercontent.com/6435299/47648021-1b1cb180-dbbc-11e8-855b-f054215c16b6.png)
 
-This is the old UI.
+- switch to the old UI and click "create new dataset".
 ![image](https://user-images.githubusercontent.com/6435299/47647348-0f2ff000-dbba-11e8-8ba1-75198fc1caae.png)
 
+- set like this.
+![image](https://user-images.githubusercontent.com/6435299/47648234-c594d480-dbbc-11e8-880a-8cd57debaa3e.png)
+
+- next, create new table.
+![image](https://user-images.githubusercontent.com/6435299/47648298-f7a63680-dbbc-11e8-9fa9-a0f723266970.png)
+define the table like this.
+![image](https://user-images.githubusercontent.com/6435299/47649697-67b6bb80-dbc1-11e8-9d91-d53cfa4cfcc9.png)
+
+- clikd query table and run a SQL like this:
+```
+SELECT count(name) FROM ["your project id":tokyo_companies.company] WHERE city = "千代田区"
+```
+For just making sure if the table is created, you could also run a simple code like this:
+```
+SELECT * FROM ["your project id":tokyo_companies.company] LIMIT 10
+```
+![image](https://user-images.githubusercontent.com/6435299/47649783-a3ea1c00-dbc1-11e8-9428-5b1393a6eb28.png)
+
+- more than 1 million search finished by 47.3 seconds.
+![image](https://user-images.githubusercontent.com/6435299/47650122-97b28e80-dbc2-11e8-8b80-856c78fa3db8.png)
+
+- a bit more complicated query was run below.
+```
+SELECT city, count(company_number) AS company_number FROM ["your project id":tokyo_companies.company] GROUP BY city　ORDER BY company_number DESC
+```
+![image](https://user-images.githubusercontent.com/6435299/47650414-83bb5c80-dbc3-11e8-8696-a828a90ada47.png)
 
 
-ここまでが済んだら、 GCP のコンソールの左側メニューから [BigQuery] をクリックします。新しいウィンドウで BigQuery の Web インターフェースが開かれます。
-左側のメニューには、プロジェクトが表示されています。プロジェクト名の右側にある下向きの三角をクリックし、 [Create new dataset] をクリックすると、以下のような画面が開きます。
+
+
+
 
 
 
